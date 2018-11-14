@@ -1,6 +1,7 @@
 package com.palacio.solution.test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.function.Executable;
@@ -51,7 +52,7 @@ class LongestOneChainSizeTest {
 		Integer expected = 4;
 		Integer[] originalArray = null;
 		Executable codeToExecute = () -> validateExecutionOutput(expected, originalArray);
-		assertThrows(NullPointerException.class, codeToExecute, "NullPointerexpected");
+		assertThrows(NullPointerException.class, codeToExecute, "NullPointer Expected");
 	}
 
 	@Test

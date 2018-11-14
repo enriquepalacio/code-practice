@@ -1,0 +1,59 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>ProjectTest</groupId>
+  <artifactId>ProjectTest</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>Project containing problem solutions</name>
+  <description>Here I Will put some solutions to general problems</description>
+  
+  <properties>
+    <maven-surefire-plugin.version>2.20.1</maven-surefire-plugin.version>
+    <junit-5.version>5.2.0</junit-5.version>
+  </properties>
+  
+  <dependencies>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
+      <version>${junit-5.version}</version>
+      <scope>compile</scope>
+    </dependency>
+  </dependencies>
+  
+  
+  <build>
+    <sourceDirectory>src</sourceDirectory>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.7.0</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+      <plugin>
+      <artifactId>maven-surefire-plugin</artifactId>
+      <version>${maven-surefire-plugin.version}</version>
+      <!-- JUnit 5 Support -->
+      <dependencies>
+        <dependency>
+          <groupId>org.junit.platform</groupId>
+          <artifactId>junit-platform-surefire-provider</artifactId>
+          <version>1.2.0</version>
+        </dependency>
+        <dependency>
+          <groupId>org.junit.jupiter</groupId>
+          <artifactId>junit-jupiter-engine</artifactId>
+          <version>${junit-5.version}</version>
+        </dependency>
+      </dependencies>
+      <configuration>
+        <includes>
+          <include>**/*Test.java</include>
+        </includes>
+      </configuration>
+    </plugin>
+    </plugins>
+  </build>
+</project>
