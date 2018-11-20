@@ -10,8 +10,6 @@ import com.palacio.solution.LongestOneChainService;
 
 class LongestOneChainSizeTest {
 
-	LongestOneChainService longestService = new LongestOneChainService();
-
 	@Test
 	void getLongestSizeInTheMidle() {
 		Integer expected = 3;
